@@ -16,5 +16,11 @@ namespace SalesWebMvc.Services
         {
             return _context.Seller.ToList(); //Síncrona
         }
+
+        public void Insert(Seller obj)
+        {
+            _context.Add(obj); //Adiciona os itens do formulário no banco
+            _context.SaveChanges(); //Salva as adições
+        }
     }
 }
