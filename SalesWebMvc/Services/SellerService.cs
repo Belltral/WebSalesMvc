@@ -19,6 +19,7 @@ namespace SalesWebMvc.Services
 
         public void Insert(Seller obj)
         {
+            obj.Department = _context.Department.First();
             _context.Add(obj); //Adiciona os itens do formulário no banco
             _context.SaveChanges(); //Salva as adições
         }
