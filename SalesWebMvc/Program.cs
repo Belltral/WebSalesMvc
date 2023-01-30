@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<SeedingService>();  //Adicionado devido ao .NET 6
 builder.Services.AddScoped<SellerService>(); //Adicionado devido ao .NET 6
+builder.Services.AddScoped<DepartmentService>(); //Adicionado devido ao .NET 6
 
 var app = builder.Build();
 app.Services.CreateScope().ServiceProvider.GetRequiredService<SeedingService>().Seed(); /* Adicionado devido ao .NET 6
