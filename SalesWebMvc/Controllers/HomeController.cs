@@ -17,7 +17,6 @@ namespace SalesWebMvc.Controllers
 
         public IActionResult Index()
         {
-            //ViewData["Tristeza"] = "Não sei o que tô fazendo aqui... :(";
             return View();
         }
 
