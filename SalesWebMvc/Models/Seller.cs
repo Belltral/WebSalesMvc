@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel.DataAnnotations; //Namespace para utilizar o [Display].
 
 namespace SalesWebMvc.Models
 {
@@ -7,11 +8,23 @@ namespace SalesWebMvc.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        [DataType(DataType.EmailAddress)]//Utilizado para definir um formato de exibição para o atributo da classe.
         public string Email { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]//Utilizado para definir um formato de exibição para o atributo da classe conforme está entre as chaves..
+        [Display(Name = "Birth Date")] //Utilizado para definir um nome de exibição para o atributo da classe.
+        [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:F2}")]
+        [Display(Name = "Base Salary")]
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
+
+        [Display(Name = "Departament")]
         public int DepartmentId { get; set; }
+
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller() { }
