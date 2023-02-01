@@ -17,9 +17,11 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+    //Escopo de serviços adicionados:
 builder.Services.AddScoped<SeedingService>();  //Adicionado devido ao .NET 6
 builder.Services.AddScoped<SellerService>(); //Adicionado devido ao .NET 6
 builder.Services.AddScoped<DepartmentService>(); //Adicionado devido ao .NET 6
+builder.Services.AddScoped<SalesRecordService>(); //Adicionado devido ao .NET 6
 
 var enUS = new CultureInfo("en-US");
 var localizationOptions = new RequestLocalizationOptions
