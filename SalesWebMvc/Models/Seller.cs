@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.ComponentModel.DataAnnotations; //Namespace para utilizar annotations.
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace SalesWebMvc.Models
 {
@@ -30,7 +31,8 @@ namespace SalesWebMvc.Models
         [Display(Name = "Base Salary")]
         public double BaseSalary { get; set; }
 
-        public Department Department { get; set; }
+        [ValidateNever]
+        public Department? Department { get; set; }
 
         [Display(Name = "Departament")]
         public int DepartmentId { get; set; }
